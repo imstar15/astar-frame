@@ -18,7 +18,7 @@ sp-runtime = { git = "https://github.com/paritytech/substrate", branch = "polkad
 sp-std = { git = "https://github.com/paritytech/substrate", branch = "polkadot-v0.9.33", default-features = false }
 
 # Polkadot
-xcm = { git = "https://github.com/paritytech/polkadot", branch = "release-v0.9.33", default-features = false }
+xcm = { git = "https://github.com/imstar15/polkadot", branch = "debug-933", default-features = false }
 
 # Benchmarks
 frame-benchmarking = { git = "https://github.com/paritytech/substrate", branch = "polkadot-v0.9.33", optional = true, default-features = false }

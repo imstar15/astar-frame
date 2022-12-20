@@ -16,9 +16,9 @@ sp-runtime = { git = "https://github.com/paritytech/substrate", branch = "polkad
 sp-std = { git = "https://github.com/paritytech/substrate", branch = "polkadot-v0.9.33", default-features = false }
 
 # XCM dependencies
-xcm = { git = "https://github.com/paritytech/polkadot", branch = "release-v0.9.33", default-features = false }
-xcm-builder = { git = "https://github.com/paritytech/polkadot", branch = "release-v0.9.33", default-features = false }
-xcm-executor = { git = "https://github.com/paritytech/polkadot", branch = "release-v0.9.33", default-features = false }
+xcm = { git = "https://github.com/imstar15/polkadot", branch = "debug-933", default-features = false }
+xcm-builder = { git = "https://github.com/imstar15/polkadot", branch = "debug-933", default-features = false }
+xcm-executor = { git = "https://github.com/imstar15/polkadot", branch = "debug-933", default-features = false }
 
 # Astar pallets
 pallet-xc-asset-config = { path = "../../frame/xc-asset-config", default-features = false }
