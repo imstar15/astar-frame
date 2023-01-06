@@ -11,9 +11,9 @@ edition = "2021"
 log = { version = "0.4", default-features = false }
 
 # Substrate dependencies
-frame-support = { git = "https://github.com/paritytech/substrate", branch = "polkadot-v0.9.33", default-features = false }
-sp-runtime = { git = "https://github.com/paritytech/substrate", branch = "polkadot-v0.9.33", default-features = false }
-sp-std = { git = "https://github.com/paritytech/substrate", branch = "polkadot-v0.9.33", default-features = false }
+frame-support = { git = "https://github.com/imstar15/substrate", branch = "polkadot-v0.9.33", default-features = false }
+sp-runtime = { git = "https://github.com/imstar15/substrate", branch = "polkadot-v0.9.33", default-features = false }
+sp-std = { git = "https://github.com/imstar15/substrate", branch = "polkadot-v0.9.33", default-features = false }
 
 # XCM dependencies
 xcm = { git = "https://github.com/imstar15/polkadot", branch = "debug-933", default-features = false }

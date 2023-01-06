@@ -46,6 +46,10 @@ where
     AssetMapper: XcAssetLocation<AssetId>,
 {
     fn convert_ref(location: impl Borrow<MultiLocation>) -> Result<AssetId, ()> {
+        log::trace!(
+            target: "xcm::weight",
+            "convert_ref!!!!1111222222222",
+        );
         if let Some(asset_id) = AssetMapper::get_asset_id(location.borrow().clone()) {
             Ok(asset_id)
         } else {
@@ -264,32 +268,54 @@ impl<T: Contains<MultiLocation>> ShouldExecute for AllowPaidExecWithDescendOrigi
         max_weight: Weight,
         _weight_credit: &mut Weight,
     ) -> Result<(), ()> {
-        log::trace!(
+        log::error!(
             target: "xcm::barriers",
             "AllowPaidExecWithDescendOriginFrom origin: {:?}, message: {:?}, max_weight: {:?}, weight_credit: {:?}",
             origin, message, max_weight, _weight_credit,
         );
         ensure!(T::contains(origin), ());
+        log::error!(
+            target: "xcm::barriers",
+            "AllowPaidExecWithDescendOriginFrom 111",
+        );
         let iter = message.0.iter_mut();
+        log::error!(
+            target: "xcm::barriers",
+            "AllowPaidExecWithDescendOriginFrom 222",
+        );
 
         match iter.take(3).collect::<Vec<_>>().as_mut_slice() {
             [DescendOrigin(..), WithdrawAsset(..), BuyExecution {
                 weight_limit: Limited(ref mut limit),
                 ..
             }] if *limit >= max_weight => {
+                log::error!(
+                    target: "xcm::barriers",
+                    "AllowPaidExecWithDescendOriginFrom 333, limit: {:?}, max_weight: {:?}",
+                    *limit, max_weight,
+                );
                 *limit = max_weight;
-                Ok(())
+                return Ok(());
             }
 
             [DescendOrigin(..), WithdrawAsset(..), BuyExecution {
                 weight_limit: ref mut limit @ Unlimited,
                 ..
             }] => {
+                log::error!(
+                    target: "xcm::barriers",
+                    "AllowPaidExecWithDescendOriginFrom 444, limit: {:?}, max_weight: {:?}",
+                    *limit, max_weight,
+                );
                 *limit = Limited(max_weight);
-                Ok(())
+                return Ok(());
             }
 
             _ => return Err(()),
         }
+        log::error!(
+            target: "xcm::barriers",
+            "AllowPaidExecWithDescendOriginFrom 555",
+        );
     }
 }
