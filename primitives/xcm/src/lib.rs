@@ -54,8 +54,7 @@ where
         if let Some(asset_id) = AssetMapper::get_asset_id(location.borrow().clone()) {
             log::error!(
                 target: "xcm::weight",
-                "convert_ref!!!!astar-frame AssetLocationIdConverter asset_id: {:?}",
-                asset_id,
+                "convert_ref!!!!astar-frame AssetLocationIdConverter Ok(asset_id)",
             );
             Ok(asset_id)
         } else {
