@@ -52,8 +52,18 @@ where
             location,
         );
         if let Some(asset_id) = AssetMapper::get_asset_id(location.borrow().clone()) {
+            log::error!(
+                target: "xcm::weight",
+                "convert_ref!!!!astar-frame AssetLocationIdConverter asset_id: {:?}",
+                asset_id,
+            );
             Ok(asset_id)
         } else {
+            log::error!(
+                target: "xcm::weight",
+                "convert_ref!!!!astar-frame AssetLocationIdConverter Err",
+                location,
+            );
             Err(())
         }
     }
