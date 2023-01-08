@@ -61,7 +61,6 @@ where
             log::error!(
                 target: "xcm::weight",
                 "convert_ref!!!!astar-frame AssetLocationIdConverter Err",
-                location,
             );
             Err(())
         }
