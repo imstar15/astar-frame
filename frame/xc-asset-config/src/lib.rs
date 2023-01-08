@@ -49,7 +49,7 @@ pub use weights::WeightInfo;
 pub mod pallet {
 
     use crate::weights::WeightInfo;
-    use frame_support::{pallet_prelude::*, traits::EnsureOrigin};
+    use frame_support::{pallet_prelude::*, traits::EnsureOrigin, log};
     use frame_system::pallet_prelude::*;
     use parity_scale_codec::HasCompact;
     use sp_std::boxed::Box;
@@ -89,6 +89,7 @@ pub mod pallet {
         }
 
         fn get_asset_id(asset_location: MultiLocation) -> Option<T::AssetId> {
+            log:error!("get_asset_id asset_location: {:?}", asset_location);
             AssetLocationToId::<T>::get(asset_location.versioned())
         }
     }
