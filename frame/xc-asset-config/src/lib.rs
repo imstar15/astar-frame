@@ -89,7 +89,7 @@ pub mod pallet {
         }
 
         fn get_asset_id(asset_location: MultiLocation) -> Option<T::AssetId> {
-            log:error!("get_asset_id asset_location: {:?}", asset_location);
+            log::error!("get_asset_id asset_location: {:?}", asset_location);
             AssetLocationToId::<T>::get(asset_location.versioned())
         }
     }
