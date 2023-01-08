@@ -46,7 +46,7 @@ where
     AssetMapper: XcAssetLocation<AssetId>,
 {
     fn convert_ref(location: impl Borrow<MultiLocation>) -> Result<AssetId, ()> {
-        log::trace!(
+        log::error!(
             target: "xcm::weight",
             "convert_ref!!!!1111222222222",
         );
