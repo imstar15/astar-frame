@@ -48,7 +48,8 @@ where
     fn convert_ref(location: impl Borrow<MultiLocation>) -> Result<AssetId, ()> {
         log::error!(
             target: "xcm::weight",
-            "convert_ref!!!!1111222222222",
+            "convert_ref!!!!astar-frame AssetLocationIdConverter, location: {:?}",
+            location,
         );
         if let Some(asset_id) = AssetMapper::get_asset_id(location.borrow().clone()) {
             Ok(asset_id)
