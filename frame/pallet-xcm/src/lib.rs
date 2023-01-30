@@ -1311,7 +1311,7 @@ pub mod pallet {
             if interior != Junctions::Here {
                 message.0.insert(0, DescendOrigin(interior))
             };
-            log::trace!(target: "xcm::send_xcm", "dest: {:?}, message: {:?}", &dest, &message);
+            log::error!(target: "xcm::send_xcm", "send_xcm!!! dest: {:?}, message: {:?}", &dest, &message);
             T::XcmRouter::send_xcm(dest, message)
         }
 
