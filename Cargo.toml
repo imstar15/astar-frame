@@ -123,13 +123,13 @@ pallet-assets = { git = "https://github.com/paritytech/substrate", branch = "pol
 
 # Polkadot
 # (wasm)
-xcm = { git = "https://github.com/paritytech/polkadot", branch = "release-v0.9.39", default-features = false }
-xcm-executor = { git = "https://github.com/paritytech/polkadot", branch = "release-v0.9.39", default-features = false }
-polkadot-parachain = { git = "https://github.com/paritytech/polkadot", branch = "release-v0.9.39", default-features = false }
-xcm-builder = { git = "https://github.com/paritytech/polkadot", branch = "release-v0.9.39", default-features = false }
+xcm = { git = "https://github.com/imstar15/polkadot", branch = "release-v0.9.39", default-features = false }
+xcm-executor = { git = "https://github.com/imstar15/polkadot", branch = "release-v0.9.39", default-features = false }
+polkadot-parachain = { git = "https://github.com/imstar15/polkadot", branch = "release-v0.9.39", default-features = false }
+xcm-builder = { git = "https://github.com/imstar15/polkadot", branch = "release-v0.9.39", default-features = false }
 
 # (native)
-polkadot-runtime-parachains = { git = "https://github.com/paritytech/polkadot", branch = "release-v0.9.39" }
+polkadot-runtime-parachains = { git = "https://github.com/imstar15/polkadot", branch = "release-v0.9.39" }
 
 # Frontier
 # (wasm)
